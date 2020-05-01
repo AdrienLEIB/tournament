@@ -27,7 +27,6 @@
 			_hp = hp;
 			_hpbase = hp;
 			_damage = 0;
-			_atout.push_back(weapon);
 			_weapon.push_back(weapon);
 			_tourDefense = 1;
 			_tourAttack = 1;
@@ -38,7 +37,6 @@
 			_hp = hp;
 			_hpbase = hp;
 			_damage = 0;
-			_atout.push_back(weapon);
 			_weapon.push_back(weapon);
 			_atout.push_back(role);
 			_tourDefense = 1;
@@ -80,18 +78,18 @@
 		}
 
 		bool greatSwordVerif() {
-			for (int i = 0; i < _atout.size(); i++)
+			for (int i = 0; i < _weapon.size(); i++)
 			{
-				if (_atout[i] == "Great Sword") {
+				if (_weapon[i] == "Great Sword") {
 					return true;
 				}
 			}
 			return false;
 		}
 		bool axeVerif() {
-			for (int i = 0; i < _atout.size(); i++)
+			for (int i = 0; i < _weapon.size(); i++)
 			{
-				if (_atout[i] == "axe") {
+				if (_weapon[i] == "axe") {
 					return true;
 				}
 			}
@@ -250,10 +248,8 @@
 
 			}
 			if (equipement == "axe") {
-				_atout.push_back("axe");
 				_weapon.clear();
 				_weapon.push_back("axe");
-				//_damage = 6;
 
 			}
 			if (equipement == "sword") {
