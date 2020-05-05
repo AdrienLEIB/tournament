@@ -114,8 +114,9 @@
 			return false;
 		}
 
-		void armorEffect() {
-			_damage -= 1;
+		int armorEffect(int damage) {
+			damage -= 1;
+			return damage;
 		}
 		int armorOpponentEffect(int damage) {
 			damage -= 3;
@@ -129,11 +130,16 @@
 			damage = damage * 2;
 			return damage;
 		}
+
 		int trueDamage(int damage, Warrior &opponent) {
 
 			damage = opponent.WeaponDamage(damage);
 			if (armorVerif() == true) {
 				damage = armorOpponentEffect(damage);
+			}
+
+			if (opponent.armorVerif() == true) {
+				damage = armorEffect(damage);
 			}
 
 			if (opponent.vinciousVerif() == true) {
@@ -151,8 +157,11 @@
 		void takeDamage(Warrior &opponent, int damage) {
 
 			damage = trueDamage(damage, opponent);
+
 			if (opponent.greatSwordVerif() == true) {
+
 				if (opponent._tourAttack % 3 != 0) {
+
 					if (bulkerVerif() == true && _powerDefense > 0) {
 						if (_tourDefense % 2 == 1) {
 							if (opponent.axeVerif() == true) {
@@ -166,7 +175,6 @@
 						}
 						
 						_tourDefense += 1;
-						opponent._tourAttack += 1;
 						//cout << "Ta defense a bouge :" << _tourDefense << " : " << opponent._tourAttack << endl;
 					}
 					else {
@@ -176,10 +184,10 @@
 					}
 					
 				}
-				else {
-					opponent._tourAttack += 1;
+
+				opponent._tourAttack += 1;
 					//cout << "L'opposant ne peut pas attaquer par conséquent ta defense n'est pas censé bouger " << _tourDefense << " : " << opponent._tourAttack <<  endl;
-				}
+			
 			}
 			else {
 				if (bulkerVerif() == true && _powerDefense > 0) {
@@ -203,6 +211,7 @@
 			}
 			
 		}
+
 		void Engage(Warrior &opponent)
 		{
 			Warrior *t = this;
@@ -244,7 +253,7 @@
 			}
 			if (equipement == "armor") {
 				_atout.push_back("armor");
-				_damage -= 1;
+				//_damage -= 1;
 
 			}
 			if (equipement == "axe") {

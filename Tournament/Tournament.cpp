@@ -66,7 +66,7 @@ static void ArmoredSwordsmanVsHighlander()
 
 static void ViciousSwordsmanVsVeteranHighlander()
 {
-	Swordsman swordsman("Vicious");
+	Swordsman swordsman("Vicious"); //
 	swordsman.Equip("axe");
 	swordsman.Equip("buckler");
 	swordsman.Equip("armor");

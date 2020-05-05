@@ -5,5 +5,5 @@ c:\users\terra\source\repos\tournament\tournament\warrior.h(81): warning C4018: 
 c:\users\terra\source\repos\tournament\tournament\warrior.h(90): warning C4018: '<' : incompatibilité signed/unsigned
 c:\users\terra\source\repos\tournament\tournament\warrior.h(99): warning C4018: '<' : incompatibilité signed/unsigned
 c:\users\terra\source\repos\tournament\tournament\warrior.h(108): warning C4018: '<' : incompatibilité signed/unsigned
-c:\users\terra\source\repos\tournament\tournament\warrior.h(225): warning C4018: '<' : incompatibilité signed/unsigned
+c:\users\terra\source\repos\tournament\tournament\warrior.h(234): warning C4018: '<' : incompatibilité signed/unsigned
   Tournament.vcxproj -> C:\Users\terra\source\repos\Tournament\Debug\Tournament.exe
